@@ -1,15 +1,23 @@
 import React, {Component} from 'react';
 import './TodoItem.css'
+import classNames from 'classnames';
 
 class TodoItem extends Component {
-    
+    constructor(props) {
+        super(props);
+
+        this.onItemClick = this.onItemClick.bind(this);
+    }
+
+    onItemClick() {
+        
+    }
     render() {
-        const { item } = this.props;
-        let className = 'TodoItem';
-        if (item.isComplete) {
-            className += ' TodoItem-complete';
-        }
-        return <div className={className}>
+        const { item, onClick } = this.props;
+        
+        return <div onClick={onClick} className={classNames('TodoItem', {
+            'TodoItem-complete': item.isComplete === true
+        })}>
                 <p>{item.title}</p>
             </div>;
     }
