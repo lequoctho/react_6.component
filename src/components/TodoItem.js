@@ -14,11 +14,18 @@ class TodoItem extends Component {
     }
     render() {
         const { item, onClick } = this.props;
+        let url = "https://image.flaticon.com/icons/svg/846/846004.svg";
+        if (item.isComplete) {
+            url = "https://image.flaticon.com/icons/svg/845/845646.svg";
+        }
         
-        return <div onClick={onClick} className={classNames('TodoItem', {
+        return <div className="bor">
+        <div className={classNames('TodoItem', {
             'TodoItem-complete': item.isComplete === true
         })}>
+                <img onClick={onClick} src={url}/>
                 <p>{item.title}</p>
+            </div>
             </div>;
     }
 }
