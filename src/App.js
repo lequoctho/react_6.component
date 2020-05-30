@@ -90,9 +90,6 @@ class App extends Component {
         }
         <div className="Footer">
           <span>1 item lefts</span>
-          <button>All</button>
-          <button>Active</button>
-          <button>Completed</button>
         </div>
       </div>
     );
